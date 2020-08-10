@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angrxStore"
+    }
+  },
+  "defaultProject": "angrxStore",
+  "cli": {
+    "analytics": "60203594-d849-4c00-b77c-54f7a714f8e7"
+  }
 }
