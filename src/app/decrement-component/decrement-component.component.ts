@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../app.state';
+import {Decrement} from '../actions/CounterActions';
 
 @Component({
   selector: 'app-decrement-component',
@@ -7,12 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DecrementComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
   }
 
   decrement(){
     console.log('decrement');
+    this.store.dispatch(new Decrement());
   }
 }

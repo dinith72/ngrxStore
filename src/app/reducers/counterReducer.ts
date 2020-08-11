@@ -1,8 +1,10 @@
-export function CounterReducer(state: number = 0, action) {
+import {CounterEnum} from '../actionEnum';
+export function CounterReducer(state: number = 10, action) {
+  console.log(action);
     // according to the action type different reducers are executed
     switch (action.type) {
-      case 'INCREMENT':
-        return state + 1;
+      case CounterEnum.INCREMENT:
+        return (state + action.payload);
         break;
    
       case 'DECREMENT': {

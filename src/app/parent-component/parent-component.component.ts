@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../app.state';
 
 @Component({
   selector: 'app-parent-component',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponentComponent implements OnInit {
 
-  constructor() { }
-  value: Number = 10;
+  constructor(private store: Store<AppState> ) { }
+  value: number = 10;
   ngOnInit(): void {
+     this.store.select('counter').subscribe( val => this.value = val);
   }
 
 }
